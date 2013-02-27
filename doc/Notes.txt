@@ -1,0 +1,15 @@
+
+
+Using VMWare Player
+===================
+
+VMWare Player downloaded a tar file.  There's a section called:
+
+Installing VMware Tools from the Command Line with the Tar Installer
+
+on this page:
+http://www.vmware.com/support/ws55/doc/ws_newguest_tools_linux.html
+
+which I basically followed.
+
+http://www.php.net/get/php-5.3.8.tar.gz/from/this/mirror

@@ -1,0 +1,13 @@
+<p>
+    This page allows administrators of the Ore-Ida council to update the
+    counselor list with the most up-to-date data.  If you have unwittingly
+    accessed this page and you are not an administrator, please report
+    this to the Ore-Ida council office.
+</p>
+
+<?php
+    echo $this->Form->create('CSVUploads', array('enctype' => 'multipart/form-data'));
+    $submitOptions = array();
+    $submitOptions['value'] = "Choose CSV File";
+    echo $this->Form->file('CSVUpload.submittedfile', $submitOptions);
+    echo $this->Form->submit('Replace data on the server with this CSV file');
