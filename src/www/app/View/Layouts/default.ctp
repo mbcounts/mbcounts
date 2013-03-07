@@ -29,7 +29,7 @@ $cakeDescription = __d('cake_dev', 'MB Counts! - the Merit Badge Counselor list 
 	<?php
 		//echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+        echo $this->Html->css('styles');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

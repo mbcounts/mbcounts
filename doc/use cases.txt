@@ -1,0 +1,4 @@
+As a user I expect to have to log in because names/numbers/addresses are involved.
+As a user I want to find a counselor for a merit badge
+As a user I may want to find more than one counselor
+As a user I would like it to email me the info

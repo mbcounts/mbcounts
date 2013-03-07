@@ -6,8 +6,16 @@
 </p>
 
 <?php
-    echo $this->Form->create('CSVUploads', array('enctype' => 'multipart/form-data'));
-    $submitOptions = array();
-    $submitOptions['value'] = "Choose CSV File";
-    echo $this->Form->file('CSVUpload.submittedfile', $submitOptions);
-    echo $this->Form->submit('Replace data on the server with this CSV file');
+
+    if (isset($processCSVSuccess) && $processCSVSuccess==true) {
+        echo "Successfully processed new data.";
+        echo $this->Html->para("","");
+        echo $this->Html->link('Main Page', '/Main');
+    }
+    else{
+        echo $this->Form->create('CSVUploads', array('enctype' => 'multipart/form-data'));
+        $submitOptions = array();
+        $submitOptions['value'] = "Choose CSV File";
+        echo $this->Form->file('CSVUpload.submittedfile', $submitOptions);
+        echo $this->Form->submit('Replace data on the server with this CSV file');
+    }

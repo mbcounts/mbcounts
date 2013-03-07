@@ -134,7 +134,7 @@
 				padding-left: 20px;
 			}
 		</style>
-		<link rel="stylesheet" type="text/css" href="<?php echo $baseDir; ?>css/cake.generic.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $baseDir; ?>css/Xcake.generic.css" />
 	</head>
 	<body>
 		<div id="container">

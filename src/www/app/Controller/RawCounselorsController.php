@@ -5,6 +5,14 @@ class RawCounselorsController extends AppController {
     var $uses = array();
 
     public function index() {
-        $this->set('rawcounselors', $this->RawCounselor->find('all'));
+        echo $this->RawCounselor->tableExists('raw_counselors');
+        $this->set('rawcounselors', $this->RawCounselor->find('all',
+            array(
+                'order' => array(
+                    '`last name`' => 'asc'
+                )
+            )
+        )
+        );
     }
 }
