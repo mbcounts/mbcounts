@@ -754,7 +754,7 @@ h1{
 }
 p{
     color: #555;
-    margin: 8px 2px 5px 3px;
+    margin: 12px 2px 5px 3px;
 }
 div.mbcol {
     display: inline;
@@ -773,7 +773,7 @@ div#header{
     min-width: 92%;
 }
 #content {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     /*padding: 3px;*/
     margin: auto;
     width: 94%;
@@ -781,7 +781,22 @@ div#header{
 .mbcheckbox{
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-right: 4px;
 }
 .data {
     margin-left: 20px;
+    margin-right: 3px;
+}
+.mbcContainerTitle {
+    background: rgb(253, 253, 189);
+    font-weight: bold;
+    padding: 6px;
+}
+#counselorSet {
+    margin-left: 20px;
+}
+div.counselor {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 13px;
 }

@@ -1,0 +1,1 @@
+<div>getCounselorsForBadgeIDs view</div>

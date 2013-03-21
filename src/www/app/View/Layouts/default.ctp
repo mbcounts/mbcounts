@@ -34,6 +34,7 @@ $cakeDescription = __d('cake_dev', 'MB Counts! - the Merit Badge Counselor list 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+        echo $this->Html->script('jquery-1.9.0.min');
 	?>
 </head>
 <body>
@@ -58,5 +59,7 @@ $cakeDescription = __d('cake_dev', 'MB Counts! - the Merit Badge Counselor list 
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+
+    <?php echo $this->Js->writeBuffer(); // Write cached scripts ?>
 </body>
 </html>

@@ -13,3 +13,12 @@ http://www.vmware.com/support/ws55/doc/ws_newguest_tools_linux.html
 which I basically followed.
 
 http://www.php.net/get/php-5.3.8.tar.gz/from/this/mirror
+
+===================================================================================================
+In GeodatasController, I was querying a web service (http://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx).  I had to set these two options in php.ini to allow it to request over https, which seemed right since we're dealing with semi-sensitive data:
+
+	allow_url_include = On
+	extension=php_openssl.dll
+	
+===================================================================================================
+	
