@@ -29,7 +29,7 @@ function populateCounselorSet(data){
 
     addMeritBadgeContainers();
 
-    var template = '<div class="counselor">FIRST MIDDLE LAST (DISTANCE miles)<br/>ADDRESS1<br/>ADDRESS2<br/>CITY, STATE ZIP<br/>PHONE</div>';
+    var template = '<div class="counselor"><span class="counselorName">FIRST MIDDLE LAST</span> (DISTANCE miles)<br/>PHONE</div>';
     var i = 0;
     var objs = JSON && JSON.parse(data) || $.parseJSON(data);
 
@@ -39,18 +39,23 @@ function populateCounselorSet(data){
         html = html.replace('MIDDLE',   objs[obj].vwmeritbadgecounselor.MiddleName);
         html = html.replace('LAST',     objs[obj].vwmeritbadgecounselor.LastName);
         html = html.replace('DISTANCE', Number(objs[obj][0].Distance).toFixed(1) );
-        html = html.replace('ADDRESS1', objs[obj].vwmeritbadgecounselor.Address1);
-        var add2 = objs[obj].vwmeritbadgecounselor.Address2.trim();
-        if (add2.length == 0){
-            html = html.replace('ADDRESS2<br/>', '');
+//        html = html.replace('ADDRESS1', objs[obj].vwmeritbadgecounselor.Address1);
+//        var add2 = objs[obj].vwmeritbadgecounselor.Address2.trim();
+//        if (add2.length == 0){
+//            html = html.replace('ADDRESS2<br/>', '');
+//        }
+//        else{
+//            html = html.replace('ADDRESS2', add2);
+//        }
+//        html = html.replace('CITY',     objs[obj].vwmeritbadgecounselor.City);
+//        html = html.replace('STATE',    objs[obj].vwmeritbadgecounselor.State);
+//        html = html.replace('ZIP',      objs[obj].vwmeritbadgecounselor.Zip);
+        if (objs[obj].vwmeritbadgecounselor.troop_only == 'N'){
+            html = html.replace('PHONE', objs[obj].vwmeritbadgecounselor.Phone);
         }
         else{
-            html = html.replace('ADDRESS2', add2);
+            html = html.replace('PHONE', '(counselor for troop only)');
         }
-        html = html.replace('CITY',     objs[obj].vwmeritbadgecounselor.City);
-        html = html.replace('STATE',    objs[obj].vwmeritbadgecounselor.State);
-        html = html.replace('ZIP',      objs[obj].vwmeritbadgecounselor.Zip);
-        html = html.replace('PHONE',    objs[obj].vwmeritbadgecounselor.Phone);
         $('#mbcContainer' + objs[obj].vwmeritbadgecounselor.meritbadges_id).append(html);
     }
 }

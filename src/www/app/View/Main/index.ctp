@@ -2,11 +2,14 @@
    $this->Html->script('main', array('inline' => false));
 ?>
 <h1>Merit Badge Counselors</h1>
-<p>This page will help you find registered merit badge counselors in the following districts</p>
-<input class="data" type="checkbox" value="" checked="checked">Gem State</input><br/>
-<input class="data" type="checkbox" value="" >Centennial</input><br/>
-<input class="data" type="checkbox" value="" >Oregon Trail</input><br/>
-<input class="data" type="checkbox" value="" >Seven Rivers</input><br/>
+<p>This page will help you find registered merit badge counselors in the following district(s)
+    <ul class="data">
+        <li>Gem State</li>
+    <!--    <li>Centennial</li>-->
+    <!--    <li>Oregon Trail</li>-->
+    <!--    <li>Seven Rivers</li>-->
+    </ul>
+</p>
 
 <p>You are logged in as:</p>
 <div class="data" id="user_fullname">

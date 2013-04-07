@@ -789,8 +789,9 @@ div#header{
 }
 .mbcContainerTitle {
     background: rgb(253, 253, 189);
-    font-weight: bold;
     padding: 6px;
+    font-weight: bold;
+    font-size: 14pt;
 }
 #counselorSet {
     margin-left: 20px;
@@ -799,4 +800,8 @@ div.counselor {
     margin-top: 8px;
     margin-bottom: 8px;
     margin-left: 13px;
+    font-size: 11pt;
+}
+.counselorName {
+    font-weight: bold;
 }
