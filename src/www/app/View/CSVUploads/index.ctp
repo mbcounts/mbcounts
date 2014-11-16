@@ -1,8 +1,8 @@
 <p>
-    This page allows administrators of the Ore-Ida council to update the
-    counselor list with the most up-to-date data.  If you have unwittingly
-    accessed this page and you are not an administrator, please report
-    this to the Ore-Ida council office.
+    This page allows administrators of [COUNCILNAME/DISTRICTNAME/ETC] to update the
+    counselor list with the most up-to-date data.  If you have accessed
+    this page and you are not an administrator, please report it to the
+    Ore-Ida council office.
 </p>
 
 <?php

@@ -6,14 +6,39 @@
  * To change this template use File | Settings | File Templates.
  */
 function updateCounselorSet(){
+    var badgeIDs = getSelectedBadgeIDs();
+
+    if (badgeIDs.length == 0){
+        flashElement( $('#meritbadges') );
+        return;
+    }
+
     var postdata =
         {
             'badgeIDs' : getSelectedBadgeIDs(),
-            'range' : $('#range').val()
+            'range' : $('#range').val(),
+            'address' : $('#address').val(),
+            'city' : $('#city').val(),
+            'state' : $('#state').val(),
+            'zip' : $('#zip').val()
         };
     $.post('vwMeritBadgeCounselors/getCounselorsForBadgeIDsNEW', {data: postdata}, function(data) {
         populateCounselorSet(data);
     });
+}
+
+function flashElement(jqElement){
+    //var id = $("div#1"); // div id=1
+    var color = "#FFBBBB"; // color to highlight
+    var delayms = "200"; // mseconds to stay color
+    jqElement.css("backgroundColor",color)
+        .css("transition","all .2s ease") // you may also (-moz-*, -o-*, -ms-*) e.g
+        .css("backgroundColor",color)
+        .delay(delayms)
+        .queue(function() {
+            jqElement.css("backgroundColor","");
+            jqElement.dequeue();
+        });
 }
 
 function getSelectedBadgeIDs(){
@@ -54,22 +79,26 @@ function populateCounselorSet(data){
             html = html.replace('PHONE', objs[obj].vwmeritbadgecounselor.Phone);
         }
         else{
-            html = html.replace('PHONE', '(counselor for troop only)');
+            html = html.replace('PHONE', '<span class="troopOnly">(counselor for troop only)</span>');
         }
         $('#mbcContainer' + objs[obj].vwmeritbadgecounselor.meritbadges_id).append(html);
     }
 }
 
 function addMeritBadgeContainers(){
-    var labels = $( "input.mbcheckbox:checked" ).parent();
+    var labels = $( "input.mbcheckbox:checked+label" );
     if (labels.length > 0){
         for (var i = 0; i<labels.length; i++){
             var txt = $(labels[i]).text().trim();
-            $('#counselorSet').append('<div id="mbcContainer' + $(labels[i]).children()[0].value + '" class="mbcContainer"><div class="mbcContainerTitle">'+txt+'</div></div>');
+            $('#counselorSet').append('<div id="mbcContainer' + $(labels[i]).attr('for').replace('mb','') + '" class="mbcContainer"><div class="mbcContainerTitle">'+txt+'</div></div>');
         }
     }
 }
 
 var countChecked = function(className) {
     return $( "input."+ className +":checked" ).length;
+}
+
+function clearCheckboxes(){
+    $('.mbcheckbox').removeAttr('checked')
 }

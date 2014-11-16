@@ -805,3 +805,26 @@ div.counselor {
 .counselorName {
     font-weight: bold;
 }
+input.mbcheckbox:checked + label.mbcheckbox{
+    background-color: #FFFF88;
+}
+.troopOnly{
+    color: darkgray;
+}
+.checkCircle{
+    max-height: 28px;
+    top: 5px;
+    position: relative;
+}
+.badge-table{
+    display: table;
+}
+.badge-row{
+    display: table-row;
+}
+.badge-cell{
+    display: table-cell;
+}
+.header-row{
+    font-weight: bold;
+}
