@@ -1,5 +1,5 @@
 <?php
-    Router::connect('/', array('controller' => 'Counselors', 'action' => 'getCounselorsForBadgeID'));
+    Router::connect('/', array('controller' => 'Counselors', 'action' => 'getCounselorsForBadgeIDs'));
 
 /**
  * Routes configuration
